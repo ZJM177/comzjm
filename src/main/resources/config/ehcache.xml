@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache >
+
+<!--    <diskStore path="java.io.tmpdir"/>-->
+    <diskStore path="D:/a"/>
+
+<!--
+    <transactionManagerLookup class="net.sf.ehcache.transaction.manager.DefaultTransactionManagerLookup"
+                              properties="jndiName=java:/TransactionManager" propertySeparator=";"/>-->
+
+<!--    <terracottaConfig url="localhost:9510"/>-->
+
+    <defaultCache
+           maxEntriesLocalHeap="0"
+           eternal="false"
+           overflowToDisk="false"
+           timeToIdleSeconds="10800"
+           timeToLiveSeconds="10800">
+
+    </defaultCache>
+
+    <!-- 会员信息缓存 -->
+    <cache name="firCache"
+           maxEntriesLocalHeap="10"
+           maxElementsInMemory="10"
+           maxEntriesLocalDisk="10"
+           eternal="false"
+           overflowToDisk="true"
+           diskSpoolBufferSizeMB="1"
+           timeToIdleSeconds="10"
+           timeToLiveSeconds="10"/>
+
+
+    <cache name="cacheTest"
+           maxElementsInMemory="10"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="100"
+           timeToLiveSeconds="200"/>
+<!--   &lt;!&ndash; 活动结果信息缓存 &ndash;&gt;
+   <cache name="MulberryActResultCache"
+           maxEntriesLocalHeap="5"
+           maxEntriesLocalDisk="5"
+           eternal="false"
+           overflowToDisk="false"
+           diskSpoolBufferSizeMB="30"
+           timeToIdleSeconds="172800"
+           timeToLiveSeconds="172800"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+    </cache>-->
+   <!--
+    &lt;!&ndash; 医生排班信息缓存 &ndash;&gt;
+    <cache name="MulberryDoctorSchedulingCache"
+    	maxEntriesLocalHeap="0"
+           maxEntriesLocalDisk="0"
+           eternal="false"
+           overflowToDisk="false"
+           diskSpoolBufferSizeMB="30"
+           timeToIdleSeconds="172800"
+           timeToLiveSeconds="172800"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+    </cache>
+
+    &lt;!&ndash; 秒杀信息缓存 &ndash;&gt;
+    <cache name="MulberrySecKillCache"
+    	maxEntriesLocalHeap="0"
+           maxEntriesLocalDisk="0"
+           eternal="false"
+           overflowToDisk="false"
+           diskSpoolBufferSizeMB="30"
+           timeToIdleSeconds="172800"
+           timeToLiveSeconds="172800"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+    </cache>
+
+    &lt;!&ndash; 秒杀成功缓存 &ndash;&gt;
+    <cache name="MulberrySKSucessCache"
+    	maxEntriesLocalHeap="0"
+           maxEntriesLocalDisk="0"
+           eternal="false"
+           overflowToDisk="false"
+           diskSpoolBufferSizeMB="30"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+    </cache>-->
+
+
+    
+
+
+</ehcache>

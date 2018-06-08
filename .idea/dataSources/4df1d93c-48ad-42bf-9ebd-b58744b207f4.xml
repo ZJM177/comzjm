@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bingkunpcweb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="bingkunpcweb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="create_table"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="record"/>
+    <schema id="8" parent="1" name="record2"/>
+    <schema id="9" parent="1" name="sakila"/>
+    <schema id="10" parent="1" name="solo"/>
+    <schema id="11" parent="1" name="sys"/>
+    <schema id="12" parent="1" name="weixin"/>
+    <schema id="13" parent="1" name="world"/>
+    <schema id="14" parent="1" name="wxpromotion"/>
+    <table id="15" parent="2" name="gift_record"/>
+    <table id="16" parent="2" name="t_request_ip_record"/>
+    <table id="17" parent="2" name="t_user">
+      <Comment>测试表</Comment>
+    </table>
+    <table id="18" parent="2" name="tr_weixin_member">
+      <Comment>微信会员保存关系表</Comment>
+    </table>
+    <column id="19" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="15" name="toUserName">
+      <Position>2</Position>
+      <Comment>接收人</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="21" parent="15" name="toUserPhone">
+      <Position>3</Position>
+      <Comment>接收人手机号</Comment>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="22" parent="15" name="fromUserName">
+      <Position>4</Position>
+      <Comment>发送人名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="23" parent="15" name="fromUserPhone">
+      <Position>5</Position>
+      <Comment>发送人手机号</Comment>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="24" parent="15" name="contentType">
+      <Position>6</Position>
+      <Comment>1:文本2:照片3：视频</Comment>
+      <DataType>tinyint(4)|0</DataType>
+    </column>
+    <column id="25" parent="15" name="content">
+      <Position>7</Position>
+      <Comment>内容（可能是文本，或url）</Comment>
+      <DataType>longtext|0</DataType>
+    </column>
+    <column id="26" parent="15" name="createTime">
+      <Position>8</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="27" parent="15" name="isDeleted">
+      <Position>9</Position>
+      <Comment>软删 0:未删除 1.删除</Comment>
+      <DataType>tinyint(4)|0</DataType>
+    </column>
+    <key id="28" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="16" name="ip">
+      <Position>2</Position>
+      <Comment>请求IP地址</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="31" parent="16" name="moblie">
+      <Position>3</Position>
+      <Comment>手机号</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="32" parent="16" name="type">
+      <Position>4</Position>
+      <Comment>0：发送祝福 1：查看祝福</Comment>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="33" parent="16" name="ip_city">
+      <Position>5</Position>
+      <Comment>预估城市</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="34" parent="16" name="qr_code_value">
+      <Position>6</Position>
+      <Comment>二维码唯一码</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="16" name="create_time">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="36" parent="16" name="update_time">
+      <Position>8</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="37" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="40" parent="17" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="41" parent="17" name="mobile">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="42" parent="17" name="sex">
+      <Position>5</Position>
+      <DataType>tinyint(4)|0</DataType>
+    </column>
+    <column id="43" parent="17" name="desc">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="44" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="18" name="memberCode">
+      <Position>1</Position>
+      <Comment>保存的是新后台的会员code</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="46" parent="18" name="mobile">
+      <Position>2</Position>
+      <Comment>会员手机号</Comment>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="47" parent="18" name="appId">
+      <Position>3</Position>
+      <Comment>公众号appId</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="48" parent="18" name="openId">
+      <Position>4</Position>
+      <Comment>openId,用来区分粉丝唯一</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="49" parent="18" name="source">
+      <Position>5</Position>
+      <Comment>会员来源 2-好多客 1-店务通</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="50" parent="18" name="type">
+      <Position>6</Position>
+      <Comment>1 注册 2 绑定</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="51" parent="18" name="invitationCode">
+      <Position>7</Position>
+      <Comment>会员邀请码 100001开始</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="52" parent="18" name="gender">
+      <Position>8</Position>
+      <Comment>性别 1 男 2 女</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="53" parent="18" name="joinDate">
+      <Position>9</Position>
+      <Comment>入会时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="54" parent="18" name="name">
+      <Position>10</Position>
+      <Comment>姓名</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="55" parent="18" name="email">
+      <Position>11</Position>
+      <Comment>邮箱</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="56" parent="18" name="createTime">
+      <Position>12</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="57" parent="18" name="isDeleted">
+      <Position>13</Position>
+      <Comment>软删 0-未删除 1-删除</Comment>
+      <DataType>tinyint(4)|0</DataType>
+    </column>
+  </database-model>
+</dataSource>
