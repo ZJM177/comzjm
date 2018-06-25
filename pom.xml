@@ -89,55 +89,61 @@
       <artifactId>ehcache</artifactId>
       <version>2.9.1</version>
     </dependency>
-    <dependency>
+ <!--   <dependency>
       <groupId>com.googlecode.ehcache-spring-annotations</groupId>
       <artifactId>ehcache-spring-annotations</artifactId>
       <version>1.1.2</version>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
     </dependency>
     <!-- mybatis核心包 -->
-    <dependency>
+<!--    <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${mybatis.version}</version>
-    </dependency>
+    </dependency>-->
     <!-- mybatis/spring包 -->
-    <dependency>
+   <!-- <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
       <version>1.2.2</version>
-    </dependency>
-    <dependency>
+    </dependency>-->
+   <!-- <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.30</version>
-    </dependency>
+    </dependency>-->
     <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
-    <dependency>
+   <!-- <dependency>
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
       <version>1.2.2</version>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>${slf4j.version}</version>
     </dependency>
 
-    <dependency>
+   <!-- <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
       <version>${slf4j.version}</version>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.16.10</version>
     </dependency>
+
+  <!--  <dependency>
+      <groupId>javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>2.5.1</version>
+    </dependency>-->
   </dependencies>
 
   <build>
