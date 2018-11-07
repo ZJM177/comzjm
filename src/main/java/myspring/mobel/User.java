@@ -11,6 +11,7 @@ import lombok.Setter;
 @Data
 @Setter
 @Getter
+
 public class User {
     private String username;
     private String password;
@@ -23,4 +24,7 @@ public class User {
         this.createTime = createTime;
     }
 
+    public User() {
+
+    }
 }

@@ -1,3 +1,4 @@
+/*
 package myspring;
 
 import org.slf4j.Logger;
@@ -10,10 +11,12 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 
 import java.util.concurrent.TimeUnit;
 
+*/
 /**
  * @author zhujiameng
  * @create 2018-07-30 15:58
- **/
+ **//*
+
 public class RedisLockImpl implements RedisDistributionLock {
     //加锁超时时间，单位毫秒， 即：加锁时间内执行完操作，如果未完成会有并发现象
     private static final long LOCK_TIMEOUT = 5*1000;
@@ -102,3 +105,4 @@ public class RedisLockImpl implements RedisDistributionLock {
         });
     }
 }
+*/

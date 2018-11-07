@@ -16,22 +16,37 @@
         <property name="location" value="classpath:config/jdbc.properties" />
     </bean>
 
+<!--
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="${driver}" />
         <property name="url" value="${url}" />
         <property name="username" value="${username}" />
         <property name="password" value="${password}" />
-        <!-- 初始化连接大小 -->
+        &lt;!&ndash; 初始化连接大小 &ndash;&gt;
         <property name="initialSize" value="${initialSize}"></property>
-        <!-- 连接池最大数量 -->
+        &lt;!&ndash; 连接池最大数量 &ndash;&gt;
         <property name="maxActive" value="${maxActive}"></property>
-        <!-- 连接池最大空闲 -->
+        &lt;!&ndash; 连接池最大空闲 &ndash;&gt;
         <property name="maxIdle" value="${maxIdle}"></property>
-        <!-- 连接池最小空闲 -->
+        &lt;!&ndash; 连接池最小空闲 &ndash;&gt;
         <property name="minIdle" value="${minIdle}"></property>
-        <!-- 获取连接最大等待时间 -->
+        &lt;!&ndash; 获取连接最大等待时间 &ndash;&gt;
         <property name="maxWait" value="${maxWait}"></property>
+    </bean>
+-->
+
+    <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource"
+          >
+        <property name="driver" value="${driver}" />
+        <property name="url" value="${url}" />
+        <property name="username" value="${username}" />
+        <property name="password" value="${password}" />
+        <property name="poolMaximumIdleConnections" value="0"/>
+        <property name="poolMaximumActiveConnections" value="1000"/>
+        <property name="poolPingQuery" value="SELECT 1 FROM DUAL" />
+        <property name="poolPingEnabled" value="true" />
+
     </bean>
 
 
@@ -40,7 +55,8 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->
-      <!--  <property name="mapperLocations" value="classpath:myspring/mapping/*.xml"></property>-->
+        <property name="mapperLocations" value="classpath*:config/sqlMapping/*.xml"></property>
+        <property name="typeAliasesPackage" value="myspring.mobel" />
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->

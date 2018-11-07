@@ -24,8 +24,8 @@ public class LanamTest {
         list.add(new User(4,"2017-05-13 00:00:00"));
 
 
-        List<User> collect = list.stream().filter(ll -> ll.getId() == 1).collect(Collectors.toList());
-        System.out.println(collect);
+      //  List<User> collect = list.stream().filter(ll -> ll.getId() == 1).collect(Collectors.toList());
+        //System.out.println(collect);
         //取出对象中的数据并滤重
         /*List<Integer> collect = list.stream().map(User::getId).distinct().collect(Collectors.toList());
         System.out.println("=="+collect);

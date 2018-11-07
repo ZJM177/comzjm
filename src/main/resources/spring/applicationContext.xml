@@ -13,7 +13,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd"
 	default-autowire="byName">
 
-
+	<aop:aspectj-autoproxy/>
 	<context:annotation-config />
 	<context:component-scan base-package="myspring" />
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
