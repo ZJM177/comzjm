@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="myspring.dao.WeixinMemberDao">
+    <sql id="select_all">
+    	SELECT
+		id
+		,memberCode
+		,appId
+		,openId
+		,mobile
+		,source
+		,type
+		,invitationCode
+		,gender
+		,name
+		,email
+		,joinDate
+		,createTime
+		,isDeleted
+		FROM tr_weixin_member
+    </sql>
+
+
+    <select id="findById" parameterType="map" resultType="member">
+        <include refid="select_all"></include>
+        WHERE id = #{id} and isDeleted = 0
+    </select>
+
+    <delete id="delete" parameterType="map">
+		update `tr_weixin_member` set isDeleted = 1 WHERE id =#{id}
+	</delete>
+
+    <update id="update" parameterType="member">
+        UPDATE  tr_weixin_member
+        SET
+		  memberCode = #{memberCode},   openId = #{openId},appId = #{appId},  mobile = #{mobile},  invitationCode=#{invitationCode}, source = #{source},  type=#{type},
+		  joinDate=#{joinDate},   isDeleted = #{isDeleted}
+        WHERE id = #{id}
+    </update>
+
+    <select id="loadMember" parameterType="map" resultType="member">
+        <include refid="select_all"></include>
+        WHERE openId = #{openId} and isDeleted = 0 and appId = #{appId} limit 1
+    </select>
+
+    <select id="queryByOpenIdList" parameterType="map" resultType="member">
+        <include refid="select_all"></include>
+        FORCE INDEX(IX_weixin_member_openId)
+        WHERE openId in
+        <foreach collection="openIdList"
+                 item="openId"
+                 open="("
+                 close=")"
+                 separator=",">
+            #{openId}
+        </foreach>
+        and appId = #{appId}
+        and type = #{type}
+        and isDeleted = 0
+    </select>
+
+    <select id="loadMaxInvitationCode" parameterType="map" resultType="java.lang.Integer">
+        select max(invitationCode) from tr_weixin_member
+    </select>
+
+
+
+
+
+    <select id="queryByInvitationCode" parameterType="map" resultType="member">
+        <include refid="select_all"></include>
+        WHERE appId = #{appId} and type = 1 and recommendCode = #{recommendCode} and isDeleted = 0
+    </select>
+
+    <select id="queryByAppIdAndMobile" parameterType="map" resultType="member">
+        <include refid="select_all"></include>
+        WHERE appId = #{appId} and mobile = #{mobile} and isDeleted = 0
+    </select>
+
+
+
+</mapper>

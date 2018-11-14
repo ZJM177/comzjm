@@ -16,10 +16,12 @@
     </sql>
 
 
-     <select id="findById" parameterType="map" resultType="User">
+     <select id="findById" parameterType="map" resultType="User" >
         <include refid="select_all"></include>
 		WHERE id = #{id}
     </select>
+	<!--<cache type="" eviction="" flushInterval="" readOnly="" size=""></cache>-->
+
 
 
 

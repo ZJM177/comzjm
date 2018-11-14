@@ -1,4 +1,5 @@
-package myspring.common;
+/*
+package myspring.common.typeHandler;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
@@ -9,10 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+*/
 /**
  * @author zhujiameng
  * @create 2018-11-07 19:57
- **/
+ **//*
+
 public class BigDecimal2TypeHandler extends BaseTypeHandler<BigDecimal> {
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, BigDecimal parameter, JdbcType jdbcType) throws SQLException {
@@ -34,3 +37,4 @@ public class BigDecimal2TypeHandler extends BaseTypeHandler<BigDecimal> {
         return null;
     }
 }
+*/
